@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://75av6sssxnwy"]
+
+[ext_resource type="Script" uid="uid://doiemk5vwy4l6" path="res://scripts/levelcomplete_ui.gd" id="1_7h3cl"]
+
+[node name="LevelCompleteUI" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7h3cl")
+
+[node name="Complete" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="Complete"]
+visible = false
+texture_filter = 2
+offset_left = 384.0
+offset_top = 241.0
+offset_right = 884.0
+offset_bottom = 447.0
+
+[node name="LevelComplete" type="Label" parent="Complete/Panel"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 2.0
+offset_top = 9.0
+offset_right = 499.0
+offset_bottom = 32.0
+text = "Level Complete"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="NextLevelButton" type="Button" parent="Complete/Panel"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 17.0
+offset_top = 46.0
+offset_right = 487.0
+offset_bottom = 109.0
+text = "Next Level"
+
+[node name="QuitButton" type="Button" parent="Complete/Panel"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 17.0
+offset_top = 121.0
+offset_right = 487.0
+offset_bottom = 184.0
+text = "Quit"
+
+[connection signal="pressed" from="Complete/Panel/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="Complete/Panel/QuitButton" to="." method="_on_quit_button_pressed"]

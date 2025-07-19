@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpwf733aanrkb"]
+[gd_scene load_steps=8 format=3 uid="uid://bpwf733aanrkb"]
 
 [ext_resource type="Script" uid="uid://c6vno7vuoffdn" path="res://scripts/world.gd" id="1_k0juu"]
 [ext_resource type="PackedScene" uid="uid://bkf1h8vnoridq" path="res://scenes/box.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://75av6sssxnwy" path="res://scenes/levelcompleteUI.tscn" id="2_qfnet"]
 [ext_resource type="PackedScene" uid="uid://dpjm577hbyoua" path="res://scenes/player.tscn" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://coyoddb5ifdwu" path="res://scenes/mafiosa.tscn" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://dywbo7gif8u36" path="res://scenes/level_2.tscn" id="3_qfnet"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_e5uuo"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_k0juu")
+level_complete_ui_scene = ExtResource("2_qfnet")
+next_level_scene = ExtResource("3_qfnet")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 modulate = Color(0.0874222, 0.289256, 0.177657, 1)
@@ -134,109 +138,7 @@ position = Vector2(605, 334)
 [node name="MafiosaKnife" parent="." instance=ExtResource("3_4wyf3")]
 position = Vector2(687, -107)
 
-[node name="MafiosaKnife2" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(-299, -189)
-
 [node name="MafiosaKnife3" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(424, -464)
-
-[node name="MafiosaKnife4" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(1598, -468)
-
-[node name="MafiosaKnife5" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(1970, 46)
-
-[node name="MafiosaKnife6" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(-1230, 455)
-
-[node name="MafiosaKnife7" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(547, 1203)
-
-[node name="MafiosaKnife8" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(-634, 1073)
-
-[node name="MafiosaKnife9" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(1576, 1431)
-
-[node name="MafiosaKnife10" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(2757, 954)
-
-[node name="MafiosaKnife11" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(3147, 250)
-
-[node name="MafiosaKnife12" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(2659, -617)
-
-[node name="MafiosaKnife13" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(3255, -1289)
-
-[node name="MafiosaKnife14" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(1977, -1766)
-
-[node name="MafiosaKnife15" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(189, -1473)
-
-[node name="MafiosaKnife16" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(-1165, -1213)
-
-[node name="MafiosaKnife17" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(-2032, 131)
-
-[node name="MafiosaKnife18" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(-1848, 954)
-
-[node name="MafiosaKnife19" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(-1306, 2048)
-
-[node name="MafiosaKnife20" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(-82, 2871)
-
-[node name="MafiosaKnife21" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(1066, 2947)
-
-[node name="MafiosaKnife22" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(2399, 2763)
-
-[node name="MafiosaKnife23" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(3970, 2243)
-
-[node name="MafiosaKnife24" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(2583, 1831)
-
-[node name="MafiosaKnife25" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(3060, 1961)
-
-[node name="MafiosaKnife26" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(3580, 975)
-
-[node name="MafiosaKnife27" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(3992, -509)
-
-[node name="MafiosaKnife28" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(4165, -1527)
-
-[node name="MafiosaKnife29" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(-2184, -1841)
-
-[node name="MafiosaKnife30" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(-2899, -1148)
-
-[node name="MafiosaKnife31" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(-2877, 1875)
-
-[node name="MafiosaKnife32" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(-2400, 3013)
-
-[node name="MafiosaKnife33" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(-1382, 3056)
-
-[node name="MafiosaKnife34" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(-342, 1940)
-
-[node name="MafiosaKnife35" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(1207, 2113)
-
-[node name="MafiosaKnife36" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(-1339, -379)
+position = Vector2(266, -101)
 
 [node name="MainCamera" type="Camera2D" parent="."]
