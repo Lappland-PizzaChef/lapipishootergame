@@ -1,0 +1,242 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpwf733aanrkb"]
+
+[ext_resource type="Script" uid="uid://c6vno7vuoffdn" path="res://scripts/world.gd" id="1_k0juu"]
+[ext_resource type="PackedScene" uid="uid://bkf1h8vnoridq" path="res://scenes/box.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://dpjm577hbyoua" path="res://scenes/player.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://coyoddb5ifdwu" path="res://scenes/mafiosa.tscn" id="3_4wyf3"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_e5uuo"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_k0juu")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.0874222, 0.289256, 0.177657, 1)
+position = Vector2(685, 680)
+scale = Vector2(8140, 5970)
+mesh = SubResource("QuadMesh_e5uuo")
+metadata/_edit_lock_ = true
+
+[node name="Box" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(105, 95)
+
+[node name="Box2" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(539, -101)
+
+[node name="Box3" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(1053, 198)
+
+[node name="Box4" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(1046, -382)
+
+[node name="Box5" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(535, -656)
+
+[node name="Box6" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(1253, -1041)
+
+[node name="Box7" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(1860, -1485)
+
+[node name="Box8" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(2001, -1492)
+
+[node name="Box9" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(2001, -1351)
+
+[node name="Box10" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(2142, -1418)
+
+[node name="Box11" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(-389, 861)
+
+[node name="Box12" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(-389, 1261)
+
+[node name="Box13" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(62, 1032)
+
+[node name="Box14" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(2045, 928)
+
+[node name="Box15" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(2415, 358)
+
+[node name="Box16" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(-515, -789)
+
+[node name="Box17" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(-1899, -789)
+
+[node name="Box18" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(-1485, -1544)
+
+[node name="Box19" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(-1485, 299)
+
+[node name="Box20" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(-2398, 1275)
+
+[node name="Box21" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(-1941, 2466)
+
+[node name="Box22" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(343, 2377)
+
+[node name="Box23" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(755, 2207)
+
+[node name="Box24" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(558, 2476)
+
+[node name="Box25" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(728, 2422)
+
+[node name="Box26" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(1955, 2762)
+
+[node name="Box27" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(2152, 2449)
+
+[node name="Box28" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(3531, 2736)
+
+[node name="Box29" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(3862, 2987)
+
+[node name="Box30" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(3065, 3184)
+
+[node name="Box31" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(3602, 1536)
+
+[node name="Box32" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(3700, 497)
+
+[node name="Box33" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(3449, -524)
+
+[node name="Box34" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(3664, -1276)
+
+[node name="Box35" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(3900, -1984)
+
+[node name="Box36" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(596, -1958)
+
+[node name="Box37" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(-741, 3011)
+
+[node name="Player" parent="." instance=ExtResource("2_rwgxs")]
+position = Vector2(605, 334)
+
+[node name="MafiosaKnife" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(687, -107)
+
+[node name="MafiosaKnife2" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-299, -189)
+
+[node name="MafiosaKnife3" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(424, -464)
+
+[node name="MafiosaKnife4" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(1598, -468)
+
+[node name="MafiosaKnife5" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(1970, 46)
+
+[node name="MafiosaKnife6" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-1230, 455)
+
+[node name="MafiosaKnife7" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(547, 1203)
+
+[node name="MafiosaKnife8" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-634, 1073)
+
+[node name="MafiosaKnife9" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(1576, 1431)
+
+[node name="MafiosaKnife10" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(2757, 954)
+
+[node name="MafiosaKnife11" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(3147, 250)
+
+[node name="MafiosaKnife12" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(2659, -617)
+
+[node name="MafiosaKnife13" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(3255, -1289)
+
+[node name="MafiosaKnife14" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(1977, -1766)
+
+[node name="MafiosaKnife15" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(189, -1473)
+
+[node name="MafiosaKnife16" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-1165, -1213)
+
+[node name="MafiosaKnife17" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-2032, 131)
+
+[node name="MafiosaKnife18" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-1848, 954)
+
+[node name="MafiosaKnife19" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-1306, 2048)
+
+[node name="MafiosaKnife20" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-82, 2871)
+
+[node name="MafiosaKnife21" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(1066, 2947)
+
+[node name="MafiosaKnife22" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(2399, 2763)
+
+[node name="MafiosaKnife23" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(3970, 2243)
+
+[node name="MafiosaKnife24" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(2583, 1831)
+
+[node name="MafiosaKnife25" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(3060, 1961)
+
+[node name="MafiosaKnife26" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(3580, 975)
+
+[node name="MafiosaKnife27" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(3992, -509)
+
+[node name="MafiosaKnife28" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(4165, -1527)
+
+[node name="MafiosaKnife29" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-2184, -1841)
+
+[node name="MafiosaKnife30" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-2899, -1148)
+
+[node name="MafiosaKnife31" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-2877, 1875)
+
+[node name="MafiosaKnife32" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-2400, 3013)
+
+[node name="MafiosaKnife33" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-1382, 3056)
+
+[node name="MafiosaKnife34" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-342, 1940)
+
+[node name="MafiosaKnife35" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(1207, 2113)
+
+[node name="MafiosaKnife36" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-1339, -379)
+
+[node name="MainCamera" type="Camera2D" parent="."]

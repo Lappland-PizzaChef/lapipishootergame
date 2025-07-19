@@ -1,0 +1,119 @@
+[gd_scene load_steps=13 format=3 uid="uid://dpjm577hbyoua"]
+
+[ext_resource type="Script" uid="uid://bkgc6278c4bdi" path="res://scripts/player.gd" id="1_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://c0y7h66l07ojr" path="res://assests/textures/pipi.png" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://dxbuin8tlxwi4" path="res://assests/textures/gunrifle.png" id="3_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://qwwe3aca5oc" path="res://assests/sfx/shotgunshoot.wav" id="4_dqkch"]
+[ext_resource type="AudioStream" uid="uid://dap6duc0fqf0k" path="res://assests/sfx/playerdeath.wav" id="5_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://b18sxnp2jo2wt" path="res://assests/sfx/buttonOn.wav" id="6_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://c0qrraojd4c38" path="res://assests/sfx/buttonOff.wav" id="7_fjrip"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
+radius = 19.0
+height = 72.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
+radius = 17.0
+height = 64.0
+
+[sub_resource type="Animation" id="Animation_fjrip"]
+resource_name = "turn_laser_on"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LaserLine2D:width")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 6.0, 2.0]
+}
+
+[sub_resource type="Animation" id="Animation_smehm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LaserLine2D:width")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ur7pv"]
+_data = {
+&"RESET": SubResource("Animation_smehm"),
+&"turn_laser_on": SubResource("Animation_fjrip")
+}
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 17
+script = ExtResource("1_qhqgy")
+
+[node name="LaserLine2D" type="Line2D" parent="."]
+position = Vector2(-3, 9)
+points = PackedVector2Array(60, 0, 1000, 0)
+width = 2.0
+default_color = Color(1, 0, 0, 0.529412)
+end_cap_mode = 2
+
+[node name="Body" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_dqkch")
+
+[node name="Gun" type="Sprite2D" parent="Body"]
+position = Vector2(10.3333, 3)
+texture = ExtResource("3_qlg0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 9)
+shape = SubResource("CapsuleShape2D_qhqgy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-7, 9)
+shape = SubResource("CapsuleShape2D_dqkch")
+
+[node name="CameraRemoteTransform" type="RemoteTransform2D" parent="."]
+
+[node name="ShootRayCast" type="RayCast2D" parent="."]
+visible = false
+position = Vector2(58, 9)
+target_position = Vector2(1000, 0)
+collision_mask = 9
+collide_with_areas = true
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_dqkch")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_qlg0r")
+
+[node name="LaserOn" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_tuyoq")
+volume_db = 10.0
+
+[node name="LaserOff" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_fjrip")
+volume_db = 10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ur7pv")
+}
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
