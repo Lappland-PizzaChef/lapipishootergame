@@ -13,6 +13,9 @@ var stop_distance: float = 20.0
 
 var hit_points: int = 3
 
+func _ready():
+	add_to_group("enemies")
+
 func _process(delta: float) -> void:
 	if player != null:
 		look_at(player.global_position)
@@ -44,6 +47,8 @@ func _on_player_detector_body_exited(body: Node2D) -> void:
 		if player != null:
 			player = null
 			print(name + " Didn't find the player!")
+			
+signal enemy_died
 
 func take_damage(amount: int):
 	if amount > 0:
@@ -63,6 +68,8 @@ func take_damage(amount: int):
 			snd.play()
 			
 			print(name + " died")
+			
+			enemy_died.emit() # <--- emits death signal
 			
 			await snd.finished
 			queue_free()

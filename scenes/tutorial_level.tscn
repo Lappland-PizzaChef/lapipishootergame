@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=3 uid="uid://dq17lc6h5t6g"]
+
+[ext_resource type="Script" uid="uid://dpoboy5od134d" path="res://scripts/tutorial_level.gd" id="1_3vde5"]
+[ext_resource type="PackedScene" uid="uid://dpjm577hbyoua" path="res://scenes/player.tscn" id="1_gk31l"]
+[ext_resource type="PackedScene" uid="uid://75av6sssxnwy" path="res://scenes/levelcompleteUI.tscn" id="2_hpxl2"]
+[ext_resource type="PackedScene" uid="uid://bpwf733aanrkb" path="res://scenes/world.tscn" id="3_fem2g"]
+[ext_resource type="PackedScene" uid="uid://bkf1h8vnoridq" path="res://scenes/box.tscn" id="5_fem2g"]
+[ext_resource type="PackedScene" uid="uid://coyoddb5ifdwu" path="res://scenes/mafiosa.tscn" id="6_31kg2"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_htge6"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_gk31l"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_nm3d5"]
+
+[node name="tutorialLevel" type="Node2D"]
+script = ExtResource("1_3vde5")
+level_complete_ui_scene = ExtResource("2_hpxl2")
+next_level_scene = ExtResource("3_fem2g")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.525101, 0.525101, 0.525101, 1)
+texture_filter = 2
+position = Vector2(640, 358)
+scale = Vector2(429, 714)
+mesh = SubResource("QuadMesh_htge6")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+modulate = Color(0.52549, 0.52549, 0.52549, 1)
+position = Vector2(644.5, -490.5)
+scale = Vector2(1287, 979)
+mesh = SubResource("QuadMesh_gk31l")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
+modulate = Color(0.52549, 0.52549, 0.52549, 1)
+position = Vector2(622, 1006)
+scale = Vector2(798.5, 582.25)
+mesh = SubResource("QuadMesh_nm3d5")
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("1_gk31l")]
+z_index = 100
+position = Vector2(579, 1058)
+
+[node name="MainCamera" type="Camera2D" parent="."]
+
+[node name="Box" parent="." instance=ExtResource("5_fem2g")]
+position = Vector2(502, 379)
+
+[node name="Box" parent="Box" instance=ExtResource("5_fem2g")]
+position = Vector2(283, 152)
+
+[node name="Box" parent="Box/Box" instance=ExtResource("5_fem2g")]
+position = Vector2(-13, -444)
+
+[node name="Box" parent="Box/Box/Box" instance=ExtResource("5_fem2g")]
+position = Vector2(-498, -400)
+
+[node name="Box" parent="Box/Box/Box/Box" instance=ExtResource("5_fem2g")]
+position = Vector2(755, -462)
+
+[node name="Box" parent="Box/Box/Box/Box/Box" instance=ExtResource("5_fem2g")]
+position = Vector2(-76, 399)
+
+[node name="tutorialLabels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 16.0
+offset_right = 43.0
+offset_bottom = 56.0
+
+[node name="Label_Movement" type="Label" parent="tutorialLabels"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 277.0
+offset_top = 1205.0
+offset_right = 502.0
+offset_bottom = 1228.0
+scale = Vector2(3, 3)
+text = "WASD or Arrow keys to move"
+
+[node name="Label_Laser" type="Label" parent="tutorialLabels"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 290.0
+offset_top = 703.0
+offset_right = 631.0
+offset_bottom = 726.0
+scale = Vector2(2, 2)
+text = "Right Mouse Button or CTRL to turn laser on"
+
+[node name="Label_Shoot" type="Label" parent="tutorialLabels"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 169.0
+offset_top = -90.0
+offset_right = 477.0
+offset_bottom = -67.0
+scale = Vector2(3, 3)
+text = "Left Mouse Button or Spacebar to shoot"
+
+[node name="MafiosaKnife" parent="." instance=ExtResource("6_31kg2")]
+position = Vector2(647, -840)
